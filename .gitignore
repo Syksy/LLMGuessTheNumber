@@ -1,0 +1,10 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.env
+.venv/
+__pycache__/
+.idea/
+tmp/
+.DS_Store
