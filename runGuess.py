@@ -163,14 +163,17 @@ while True:
                     "deepseek-ai/deepseek-r1",
                     "deepseek-ai/deepseek-v3",
                     # Google Deepmind's Gemma 3
-                    #"google-deepmind/gemma-3-4b-it:00139d2960396352b671f7b5c2ece5313bf6d45fe0a052efe14f023d2a81e196",
-                    #"google-deepmind/gemma-3-12b-it:5a0df3fa58c87fbd925469a673fdb16f3dd08e6f4e2f1a010970f07b7067a81c",
-                    #"google-deepmind/gemma-3-27b-it:c0f0aebe8e578c15a7531e08a62cf01206f5870e9d0a67804b8152822db58c54"
+                    "google-deepmind/gemma-3-4b-it:00139d2960396352b671f7b5c2ece5313bf6d45fe0a052efe14f023d2a81e196",
+                    "google-deepmind/gemma-3-12b-it:5a0df3fa58c87fbd925469a673fdb16f3dd08e6f4e2f1a010970f07b7067a81c",
+                    "google-deepmind/gemma-3-27b-it:c0f0aebe8e578c15a7531e08a62cf01206f5870e9d0a67804b8152822db58c54"
                 ]:
+                    # Sanitize / into _ in "modelprovider/modelname" and format filename
                     filename = (re.sub("/", "_", modelname)
                                 + "_temp" + str(temp)
                                 + "_rep" + str(rep)
                                 )
+                    # Sanitize version names away, e.g. modelname:VERSIONHASH_pars removing :VERSIONHASH
+                    filename = re.sub(r":[^\_]*(?=_)", "", filename, count=1)
                     # Run only if the output file doesn't exist yet
                     if not os.path.isfile(os.path.realpath(filename + ".out")):
                         print("Running " + filename)
@@ -195,7 +198,9 @@ while True:
                         "gemini-2.5-pro-preview-06-05",
                         "gemini-2.5-pro-preview-05-06",
                         "gemini-2.0-flash-001",
-                        "gemini-2.0-flash-lite-001"
+                        "gemini-2.0-flash-lite-001",
+                        #"gemini-1.5-pro-001",
+                        #"gemini-1.5-pro-002"
                     ]:
                     client = OpenAI(
                         api_key=os.environ.get("GEMINI_API_TOKEN"),
