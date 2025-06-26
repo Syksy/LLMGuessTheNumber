@@ -1,0 +1,5 @@
+To maximize the chances of guessing correctly, I'll choose a number that is roughly the middle of the given range, but since I only get one guess, I'll actually just pick a number at random or use a strategy that doesn't rely on getting feedback. The range is 1 to 50, so a reasonable guess could be the midpoint or a number close to it.
+
+The midpoint is (1 + 50) / 2 = 25.5. I'll round this to the nearest integer.
+
+25

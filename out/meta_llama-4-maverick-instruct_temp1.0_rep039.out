@@ -1,0 +1,7 @@
+To maximize the chance of guessing correctly, I'll choose a number that is roughly in the middle of the given range, as this gives me an equal chance of the number being higher or lower if I were to have multiple guesses. Since the range is between 1 and 50, the middle number would be around the average of 1 and 50.
+
+The average of 1 and 50 is calculated as (1 + 50) / 2 = 25.5. Since we're dealing with integers, I can round this to either 25 or 26.
+
+Given that I need to return the answer as a plain number and I have only one guess, I will choose 25.
+
+25

@@ -1,0 +1,5 @@
+To maximize the chances of guessing correctly, I'll choose a number that is roughly the middle of the given range, as this gives me the best chance of being correct given the constraints. The range is 1 to 50.
+
+The middle value of 1 to 50 is calculated as (1 + 50) / 2 = 25.5. Since we're dealing with integers, I can round this to the nearest whole number, which gives me 25 or 26. Both are equally valid choices, but I'll pick one.
+
+26

@@ -1,0 +1,7 @@
+To maximize the chance of guessing correctly, I'll choose a number roughly in the middle of the given range. The range is between 1 and 50.
+
+The best strategy for a single guess is to pick a number that is as likely as possible to be the one you're thinking of. Given no additional information, the optimal guess is the middle number of the range 1 to 50.
+
+To find the middle number: (1 + 50) / 2 = 25.5. Since we're dealing with integers and 25.5 is not an integer, we can round it to either 25 or 26. Both are equally valid choices, but let's go with 25.
+
+25

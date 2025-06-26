@@ -1,0 +1,5 @@
+To maximize the chance of guessing correctly, I'll choose a number that splits the range into two equal parts as much as possible, but since you're only giving me one guess and the range is relatively small (1 to 50), a simpler approach is to pick a number roughly in the middle or make an educated guess based on the distribution.
+
+Given the number is between 1 and 50, the middle value would be around 25 or 26. 
+
+25

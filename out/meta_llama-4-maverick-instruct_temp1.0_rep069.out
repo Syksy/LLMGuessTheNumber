@@ -1,0 +1,3 @@
+To maximize the chances of guessing correctly, I'll choose a number that is roughly the midpoint of the given range. The range is between 1 and 50, so the midpoint is (1 + 50) / 2 = 25.5. Since we're dealing with integers, I can round this to the nearest whole number.
+
+25

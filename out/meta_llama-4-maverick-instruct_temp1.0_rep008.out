@@ -1,0 +1,10 @@
+To maximize the chance of guessing correctly, I'll choose a number roughly in the middle of the given range. The range is between 1 and 50.
+
+The optimal first guess in a binary search (which is essentially what we're doing here) is the middle number. 
+
+For the range 1 to 50, the middle number is calculated as: (1 + 50) / 2 = 25.5. Since we're dealing with integers, we'll round this to the nearest integer.
+
+25.5 rounded to the nearest integer is 26.
+
+So, my guess is: 
+26

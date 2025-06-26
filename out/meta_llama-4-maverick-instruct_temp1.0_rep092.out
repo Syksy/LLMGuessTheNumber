@@ -1,0 +1,9 @@
+To maximize the chances of guessing correctly, I'll choose a number that is roughly the middle of the given range. The range is between 1 and 50.
+
+Since there's an equal chance for any number within this range, the best strategy is to pick the middle number. 
+
+The range is 1 to 50, so the middle number is calculated as (1 + 50) / 2 = 25.5. Since we're dealing with integers, we can round this to the nearest whole number. 
+
+Rounding 25.5 gives us 26.
+
+26

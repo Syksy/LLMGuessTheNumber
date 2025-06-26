@@ -1,0 +1,9 @@
+To maximize the chance of guessing correctly, I'll choose a number roughly in the middle of the given range. The range is between 1 and 50.
+
+The best strategy for a single guess in a uniform distribution is to pick a number that splits the range into two equal parts or as close to equal as possible. 
+
+The mid-point between 1 and 50 is (1 + 50) / 2 = 25.5. Since we're dealing with integers, we can round this to the nearest whole number. 
+
+25.5 rounded to the nearest whole number is 26 (though 25 would be just as valid a choice).
+
+26
