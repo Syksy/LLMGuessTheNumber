@@ -2,9 +2,49 @@
 
 ## Query
 
+The following query was sent as-is to various LLMs (inspired by an over-representation of LLMs' certain answers to a thread on [Reddit](https://www.reddit.com/r/OpenAI/comments/1lejvbl/1_question_1_answer_5_models/)):
+
 "I am thinking of a random integer number between 1 and 50. Try to guess what number I am thinking of. You will only get one guess and please return the answer as a plain number."
 
+The results from the query are stored in the ```out```-folder, with filenames indicating models, temperature-parameter,
+and replication index.
+
+## Files and runs
+
+The LLMs were called on June 23rd and 25th, 2025. 
+
+Files for the run:
+
+- ```runGuess.py``` : Contains the main loop to query the LLM APIs
+- ```gatherGuess.py``` : After running ```runGuess.py```, gathers results from the ```out```-folder and pops out suitable pandas
+- ```.env``` : Contains API keys etc needed to run ```runGuess.py```, but omitted from this repo for obvious reasons
+
 ## Results
+
+Apparently, if LLMs are not explicitly not stated to use a (pseudo)random generation algorithm for this query, they will
+resort to numbers ending in 7 (or 3) quite often. Some decide to go with the mid-range (25). I added the further 
+instruction "you will only get one guess" because LLMs often would treat this as a guessing game, where they would get 
+multiple guesses with an answer if the true answer was guessed, or if it was lower or higher. For this the obvious optimal
+strategy in average would be a binary search tree starting at 25. and checking halving-points to the right direction. 
+Instructions to return the answer as a plain number was merely for convenience, so the one to two digit number would be 
+easier to RegEx out from the output.
+
+27, 37, 23, 17, and 25 were popular choices. Other notable ones were 1 (Llama 4 Maverick and few by DeepSeek-v3); the 
+only surprise really was the lack of 42 (reference to [Douglas Adams' books](https://www.wikihow.com/42-Meaning)); only one who guessed this was o1 (temp 1.0).
+The prevalence of numbers ending in 7s may be attributed to the ["blue-seven" social phenomenon](https://en.wikipedia.org/wiki/Blue%E2%80%93seven_phenomenon), although I'm not 
+sure how widely accepted this is. But for some reason LLMs do tend towards 7s (and 3s), despite indicating at least on 
+some level that the number thought of would be "random".
+
+If the number thought of is not truly random, people tend to avoid "non-random" seeming numbers, such a 1, 50, 25, etc. 
+So most likely if this was a question presented at the street, the distribution of the real answer would be something of 
+a bimodal distribution within the range 1 to 50, maybe with bumps at places like 23, 27, 33, and 37 or so, and 
+statistical under-representation at the ends (1 and 50) and middle (25). Just guessing though.
+
+While most models were quite conservative in how verbose they were in their answers, most adhered to the instructions to 
+just return a plain number. Only notable exception was DeepSeek-models (especially -R1), which insisted on justifying its answers in length. 
+
+Results are shown below, stratified according to the temperature parameter. The queries were always replicated 100 times 
+with resetting of the client session.
 
 ### Temperature 0.0
 
@@ -110,5 +150,5 @@ meta_llama-4-maverick-instruct   1.0   1 (65.0%) 25 (35.0%)        NaN
            mistral-medium-2505   1.0  37 (54.0%) 23 (44.0%)  27 (2.0%)
             mistral-small-2503   1.0  23 (74.0%) 25 (18.0%)  27 (8.0%)
                  o1-2024-12-17   1.0  42 (42.0%) 37 (35.0%)  27 (8.0%)
-                 o3-2025-04-16   1.0  37 (66.0%) 27 (15.0%) 17 (11.0%
+                 o3-2025-04-16   1.0  37 (66.0%) 27 (15.0%) 17 (11.0%)
 ```
